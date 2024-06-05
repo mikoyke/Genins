@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
   const [messages, setMessages] = useState([]);
   const [userInput, setUserInput] = useState("");
   const [options, setOptions] = useState([]);
+  const [data, setData] = useState(null);
 
   const appendMessage = (sender, text) => {
     setMessages((prevMessages) => [...prevMessages, { sender, text }]);
@@ -57,7 +58,18 @@ function App() {
     setOptions([]);
   };
 
+  useEffect(() => {
+    fetch("/api")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setData(data.message);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+  
   return (
+    <>
     <div className="chat-parent-container">
       <div className="chat-container">
         <div className="chat-header">Chatbot</div>
@@ -89,6 +101,7 @@ function App() {
         )}
       </div>
     </div>
+    </>
   );
 }
 
