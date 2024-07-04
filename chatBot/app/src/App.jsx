@@ -67,40 +67,103 @@ function App() {
       })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
-  
+
   return (
     <>
-    <div className="chat-parent-container">
-      <div className="chat-container">
-        <div className="chat-header">Chatbot</div>
-        <div className="chat-messages">
-          {messages.map((msg, index) => (
-            <div key={index} className={`message ${msg.sender}`}>
-              {msg.text}
+      <div className="chat-parent-container">
+        <div className="chat-container">
+          <header>
+            <div class="logo">
+              <div class="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="23"
+                  height="24"
+                  viewBox="0 0 23 24"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_2033_2773)">
+                    <rect
+                      y="0.5"
+                      width="23"
+                      height="23"
+                      rx="6"
+                      fill="#F0F4FC"
+                    />
+                    <circle
+                      cx="11.5"
+                      cy="12"
+                      r="6.5"
+                      stroke="#2044F2"
+                      stroke-width="2"
+                    />
+                    <circle cx="18" cy="5.5" r="2" fill="#2044F2" />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_2033_2773">
+                      <rect width="23" height="24" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              GENINS
             </div>
-          ))}
-        </div>
-        <div className="chat-input">
-          <input
-            type="text"
-            value={userInput}
-            onChange={(e) => setUserInput(e.target.value)}
-            placeholder="Type a message..."
-            onKeyPress={(e) => e.key === "Enter" && sendMessage()}
-          />
-          <button onClick={sendMessage}>Send</button>
-        </div>
-        {options.length > 0 && (
-          <div className="chat-options">
-            {options.map((option, index) => (
-              <button key={index} onClick={() => handleOptionClick(option)}>
-                {option}
-              </button>
+            <div class="user-info">
+              Hi, Alexander
+              <div class="user-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                >
+                  <path
+                    d="M16 7.25C16 9.45914 14.2091 11.25 12 11.25C9.79086 11.25 8 9.45914 8 7.25C8 5.04086 9.79086 3.25 12 3.25C14.2091 3.25 16 5.04086 16 7.25Z"
+                    stroke="#F0F4FC"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12 14.25C8.13401 14.25 5 17.384 5 21.25H19C19 17.384 15.866 14.25 12 14.25Z"
+                    stroke="#F0F4FC"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </div>
+          </header>
+          <div className="chat-messages">
+            {messages.map((msg, index) => (
+              <div key={index} className={`message ${msg.sender}`}>
+                {msg.text}
+              </div>
             ))}
           </div>
-        )}
+          <div className="chat-input">
+            <input
+              type="text"
+              value={userInput}
+              onChange={(e) => setUserInput(e.target.value)}
+              placeholder="Type a message..."
+              onKeyPress={(e) => e.key === "Enter" && sendMessage()}
+            />
+            <button onClick={sendMessage}>Send</button>
+          </div>
+          {options.length > 0 && (
+            <div className="chat-options">
+              {options.map((option, index) => (
+                <button key={index} onClick={() => handleOptionClick(option)}>
+                  {option}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
-    </div>
     </>
   );
 }

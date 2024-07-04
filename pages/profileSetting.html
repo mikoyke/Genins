@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: #f0f4ff;
+      }
+
+      .header {
+        background-color: #3d63d2;
+        color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 24px;
+        width: 100%;
+      }
+
+      .header .logo {
+        color: #fff;
+
+        font-family: "Modern No. 20";
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+      }
+
+      .header .profile-icon {
+        font-size: 24px;
+      }
+
+      .content {
+        flex: 1;
+        padding: 24px;
+      }
+
+      .profile {
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+      }
+
+      .profile-pic {
+        border-radius: 50%;
+        margin-right: 16px;
+        width: 100px;
+        height: 100px;
+        flex-shrink: 0;
+      }
+
+      .profile-info h2 {
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+
+      .profile-info p {
+        color: #666666;
+        font-size: 16px;
+      }
+
+      .profile-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+      }
+
+      .form-group label {
+        color: #666666;
+        margin-bottom: 8px;
+      }
+
+      .form-group input,
+      .form-group select {
+        border-radius: 8px;
+        border: 1px solid #e0e0e9;
+        background: #f9f9f9;
+        color: #000;
+        padding: 8px;
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        width: 550px;
+        height: 52px;
+        flex-shrink: 0;
+      }
+
+      .save-btn {
+        background-color: #3d63d2;
+        border: none;
+        border-radius: 4px;
+        color: #ffffff;
+        font-size: 16px;
+        padding: 12px;
+        width: 100px;
+        cursor: pointer;
+        grid-column: span 2;
+        position: absolute;
+        right: 24px;
+        top: 100px;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        border-radius: 8px;
+        background: #4461f2;
+      }
+
+      .save-btn:hover {
+        background-color: #2c4ba1;
+      }
+
+      .actions {
+        display: flex;
+        justify-content: space-between;
+        padding: 24px;
+      }
+
+      .logout-btn {
+        display: flex;
+        padding: 12px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        background: #4461f2;
+        color: #fff;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        position: absolute;
+        right: 850px;
+        top: 580px;
+      }
+      .switch-account-btn {
+        background-color: #ffffff;
+        border: 1px solid #3d63d2;
+        border-radius: 4px;
+        color: #3d63d2;
+        font-size: 16px;
+        padding: 12px;
+        width: 300px;
+        cursor: pointer;
+        position: absolute;
+        right: 480px;
+        top: 580px;
+      }
+
+      .logout-btn:hover,
+      .switch-account-btn:hover {
+        background-color: #cbd1e2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="23"
+          height="24"
+          viewBox="0 0 23 24"
+          fill="none"
+        >
+          <g clip-path="url(#clip0_2024_2093)">
+            <rect y="0.5" width="23" height="23" rx="6" fill="white" />
+            <circle
+              cx="11.5"
+              cy="12"
+              r="6.5"
+              stroke="#2044F2"
+              stroke-width="2"
+            />
+            <circle cx="18" cy="5.5" r="2" fill="#2044F2" />
+          </g>
+          <defs>
+            <clipPath id="clip0_2024_2093">
+              <rect width="23" height="24" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+        GENINS
+      </div>
+      <div class="profile-icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="25"
+          viewBox="0 0 24 25"
+          fill="none"
+        >
+          <path
+            d="M16 7.25C16 9.45914 14.2091 11.25 12 11.25C9.79086 11.25 8 9.45914 8 7.25C8 5.04086 9.79086 3.25 12 3.25C14.2091 3.25 16 5.04086 16 7.25Z"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M12 14.25C8.13401 14.25 5 17.384 5 21.25H19C19 17.384 15.866 14.25 12 14.25Z"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+    </div>
+    <div class="content">
+      <div class="profile">
+        <img
+          src="https://marketplace.canva.com/EAFqNrAJpQs/1/0/1600w/canva-neutral-pink-modern-circle-shape-linkedin-profile-picture-WAhofEY5L1U.jpg"
+          alt="Profile Picture"
+          class="profile-pic"
+        />
+        <div class="profile-info">
+          <h2>Alexa Rawles</h2>
+          <p>alexarawles@gmail.com</p>
+        </div>
+      </div>
+      <form class="profile-form">
+        <div class="form-group">
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" placeholder="Enter your Name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Email Address" />
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select id="gender">
+            <option>Select your Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="non-binary">Non-Binary</option>
+            <option value="prefer-not-to-say">Prefer not to say</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="country">Country</label>
+          <select id="country">
+            <option>Select your Country</option>
+            <option value="us">United States</option>
+            <option value="ca">Canada</option>
+            <option value="uk">United Kingdom</option>
+            <option value="au">Australia</option>
+            <option value="in">India</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="language">Language</label>
+          <select id="language">
+            <option>Select your Language</option>
+            <option value="english">English</option>
+            <option value="spanish">Spanish</option>
+            <option value="french">French</option>
+            <option value="german">German</option>
+            <option value="chinese">Chinese</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="time-zone">Time Zone</label>
+          <select id="time-zone">
+            <option>Select your Time Zone</option>
+            <option value="est">Eastern Standard Time (EST)</option>
+            <option value="cst">Central Standard Time (CST)</option>
+            <option value="pst">Pacific Standard Time (PST)</option>
+            <option value="gmt">Greenwich Mean Time (GMT)</option>
+            <option value="ist">Indian Standard Time (IST)</option>
+          </select>
+        </div>
+        <button type="submit" class="save-btn">Save</button>
+      </form>
+    </div>
+    <div class="actions">
+      <button class="logout-btn">Logout</button>
+      <button class="switch-account-btn">
+        Sign in with a different account
+      </button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #3366cc;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      .header {
+        background-color: #3d63d2;
+        color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 24px;
+        width: 350px;
+        border-radius: 5px;
+      }
+      .header .logo {
+        color: #fff;
+        font-family: "Modern No. 20";
+        font-size: 30px;
+        font-style: normal;
+        line-height: 5px;
+      }
+      .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        text-align: center;
+      }
+      .container h1 {
+        margin-bottom: 20px;
+        color: #333;
+        font-family: "Modern No. 20";
+      }
+      .container input {
+        width: 90%;
+        padding: 15px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      .container button {
+        width: 100%;
+        padding: 15px;
+        background-color: #3366cc;
+        border: none;
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .container button:hover {
+        background-color: #254a8a;
+      }
+      .container .login {
+        margin-top: 20px;
+        font-size: 14px;
+      }
+      .container .login a {
+        color: #3366cc;
+        text-decoration: none;
+      }
+      .container .login a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="23"
+            height="24"
+            viewBox="0 0 23 24"
+            fill="none"
+          >
+            <g clip-path="url(#clip0_2024_2093)">
+              <rect y="0.5" width="23" height="23" rx="6" fill="white" />
+              <circle
+                cx="11.5"
+                cy="12"
+                r="6.5"
+                stroke="#2044F2"
+                stroke-width="2"
+              />
+              <circle cx="18" cy="5.5" r="2" fill="#2044F2" />
+            </g>
+            <defs>
+              <clipPath id="clip0_2024_2093">
+                <rect width="23" height="24" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+          GENINS
+        </div>
+        <div class="profile-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="25"
+            viewBox="0 0 24 25"
+            fill="none"
+          ></svg>
+        </div>
+      </div>
+      <h1>Registration</h1>
+      <form>
+        <input type="text" placeholder="Enter your name" required />
+        <input type="email" placeholder="Enter your email" required />
+        <input type="password" placeholder="Create password" required />
+        <input type="password" placeholder="Confirm password" required />
+        <button type="submit">Register Now</button>
+      </form>
+      <div class="login">
+        Already have an account? <a href="#">Login now</a>
+      </div>
+    </div>
+  </body>
+</html>

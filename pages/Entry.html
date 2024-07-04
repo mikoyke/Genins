@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Genins - Entry page</title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #f0f4fc;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 60px;
+        padding: 20px;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #3d63d2;
+        color: white;
+        padding: 16px 24px;
+        border-radius: 8px 8px 0 0;
+        width: 100%;
+      }
+
+      .icon {
+        margin-right: 3px;
+      }
+      .logo {
+        display: flex;
+        font-family: "Modern No. 20";
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+      }
+      .user-info {
+        margin-bottom: -13px;
+        font-size: 16px;
+        display: flex;
+      }
+      .user-icon {
+        display: flex;
+        margin-left: 10px;
+        margin-top: -4px;
+      }
+      main {
+        background: white;
+        padding: 10px;
+        border-radius: 0 0 8px 8px;
+        text-align: center;
+        margin-right: -48px;
+        height: 800px;
+      }
+      h1 {
+        font-size: 24px;
+        margin-top: 150px;
+      }
+      .options {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin-top: 100px;
+      }
+      .option {
+        background: #fff;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        padding: 15px;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+        border-radius: 20px;
+        border: 1px solid #4461f2;
+      }
+      .option:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .option img {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 10px;
+      }
+      .option p {
+        font-size: 12px;
+        font-weight: bold;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <div class="icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="23"
+              height="24"
+              viewBox="0 0 23 24"
+              fill="none"
+            >
+              <g clip-path="url(#clip0_2033_2773)">
+                <rect y="0.5" width="23" height="23" rx="6" fill="#F0F4FC" />
+                <circle
+                  cx="11.5"
+                  cy="12"
+                  r="6.5"
+                  stroke="#2044F2"
+                  stroke-width="2"
+                />
+                <circle cx="18" cy="5.5" r="2" fill="#2044F2" />
+              </g>
+              <defs>
+                <clipPath id="clip0_2033_2773">
+                  <rect width="23" height="24" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          GENINS
+        </div>
+        <div class="user-info">
+          Hi, Alexander
+          <div class="user-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+            >
+              <path
+                d="M16 7.25C16 9.45914 14.2091 11.25 12 11.25C9.79086 11.25 8 9.45914 8 7.25C8 5.04086 9.79086 3.25 12 3.25C14.2091 3.25 16 5.04086 16 7.25Z"
+                stroke="#F0F4FC"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12 14.25C8.13401 14.25 5 17.384 5 21.25H19C19 17.384 15.866 14.25 12 14.25Z"
+                stroke="#F0F4FC"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </div>
+      </header>
+      <main>
+        <h1>
+          Hello Alexander, please choose how you would like to create your
+          slides:
+        </h1>
+        <div class="options">
+          <div class="option" id="smart-template">
+            <img
+              src="https://s3-alpha-sig.figma.com/img/dc95/9738/179773ef0d701fc06160eb3fbaebd25d?Expires=1721001600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=L9C6RQ~ZJBHx5T7t9FrLo58~2XK6cAQoKyOv2v3nO8vuIiKWVMvrLzAfQdOilS6krPopVZLUnaodkYSZlUTbECGZZF6bFCHyr6Nso~XHlcs5d2ujHmQgjcKnmS~IillkTdvIZjE9agOfz2C8LYFbUuFdocU1QZYDo3F1G-bswuKsCD-Zqd0arq994N2-KfuNzqNPgXYOF37i3BOivNhAfnV1QSdmGzwXV95P~nZ8rT-fcPL7KhH6cMbif6ccmH3AAXkzZzfcI4qgjD2jQ6ucYwRcMUNoON3CXll8j~QFd6CauAppgS1DlrgynHAK2pxtBTNGODkHdq6gHTAjYveJtA__"
+              alt="Smart Template Generation"
+            />
+            <p>Smart Template Generation</p>
+          </div>
+          <div class="option" id="template-library">
+            <img
+              src="https://s3-alpha-sig.figma.com/img/bb5b/1c1b/c0270da204452264e2935e00a45fe206?Expires=1721001600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MAt1ur~uiy25HKNlJsmoB1TwNbRe7L~qYzArJ4uLYKFxaoJfJ1Rb0ZnXaCsz3-KkTYYqAm-iEw6TPrB0TWqJNUomKD~kzC4decqlWl1tvstFcL1F05i2b7N8JuJz8fBe7Oe~gIKkuWwjvmVzWJK31rDeGLnKFH3pmHL6U9zWh2zNp~BKjUni0aXQsOzuDdozerkogJuyeGDwIN9Nqj8~iNviwMHs1fQR2g-pL7VAIspXENvPsKWIzwryH5828qKpOs~A~feUh-0VWcRQwrpq5BC1Vm-rNXzcjrzFoNB6c7BKKKOpX9tdLlu9RdPg94gRP0bzzV1VMsMV-4icXJAVmg__"
+              alt="Go to Template Library"
+            />
+            <p>Go to Template Library</p>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script>
+      document
+        .getElementById("smart-template")
+        .addEventListener("click", function () {
+          alert("Smart Template Generation clicked");
+        });
+
+      document
+        .getElementById("template-library")
+        .addEventListener("click", function () {
+          alert("Template Library clicked");
+        });
+    </script>
+  </body>
+</html>
