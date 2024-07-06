@@ -1,3 +1,5 @@
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
 body {
   font-family: Arial, sans-serif;
   background: #f1f1f1;
@@ -26,23 +28,26 @@ body {
   padding: 10px;
   margin: 5px 0;
   border-radius: 5px;
-  max-width: 80%;
+  width: auto;
 }
 
 .message.user {
-  background-color: #ebdd6060;
-  align-self: flex-end;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .message.bot {
-  background-color: #0eceec3b;
   align-self: flex-start;
+  display: inline-block;
+  border: solid #3d63d2;
 }
 
 .chat-input {
   display: flex;
   gap: 10px;
   margin-right: -48px;
+  margin-left: 10px;
+  align-items: center;
 }
 
 .chat-input input {
@@ -56,8 +61,7 @@ body {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #99b4b2;
-  color: white;
+
   cursor: pointer;
 }
 
@@ -117,4 +121,46 @@ header {
   display: flex;
   margin-left: 10px;
   margin-top: -4px;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.message i {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.file-message {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.file-message i {
+  margin-right: 5px;
+}
+
+.file-upload {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.file-upload input[type="file"] {
+  display: none;
+}
+
+.file-upload i {
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+}
+
+.file-upload:hover i {
+  color: #2538de;
 }

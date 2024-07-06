@@ -6,17 +6,19 @@ function App() {
   const [userInput, setUserInput] = useState("");
   const [options, setOptions] = useState([]);
   const [data, setData] = useState(null);
+  const [selectedFile, setSelectedFile] = useState(null);
 
-  const appendMessage = (sender, text) => {
-    setMessages((prevMessages) => [...prevMessages, { sender, text }]);
+  const appendMessage = (sender, text, file = null) => {
+    setMessages((prevMessages) => [...prevMessages, { sender, text, file }]);
   };
 
   const sendMessage = () => {
-    if (userInput.trim()) {
-      appendMessage("user", userInput);
+    if (userInput.trim() || selectedFile) {
+      appendMessage("user", userInput, selectedFile);
       getBotResponse(userInput);
       setUserInput("");
       setOptions([]);
+      setSelectedFile(null);
     }
   };
 
@@ -58,6 +60,10 @@ function App() {
     setOptions([]);
   };
 
+  const handleFileChange = (event) => {
+    setSelectedFile(event.target.files[0]);
+  };
+
   useEffect(() => {
     fetch("/api")
       .then((res) => res.json())
@@ -73,8 +79,8 @@ function App() {
       <div className="chat-parent-container">
         <div className="chat-container">
           <header>
-            <div class="logo">
-              <div class="icon">
+            <div className="logo">
+              <div className="icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="23"
@@ -108,9 +114,9 @@ function App() {
               </div>
               GENINS
             </div>
-            <div class="user-info">
+            <div className="user-info">
               Hi, Alexander
-              <div class="user-icon">
+              <div className="user-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -139,11 +145,22 @@ function App() {
           <div className="chat-messages">
             {messages.map((msg, index) => (
               <div key={index} className={`message ${msg.sender}`}>
+                {msg.sender === "bot" && <i className="fas fa-robot"></i>}
+                {msg.sender === "user" && <i className="fas fa-user"></i>}
                 {msg.text}
+                {msg.file && (
+                  <div className="file-message">
+                    <i className="fas fa-file"></i> {msg.file.name}
+                  </div>
+                )}
               </div>
             ))}
           </div>
           <div className="chat-input">
+            <label className="file-upload">
+              <input type="file" onChange={handleFileChange} />
+              <i className="fas fa-paperclip"></i>
+            </label>
             <input
               type="text"
               value={userInput}
@@ -151,7 +168,21 @@ function App() {
               placeholder="Type a message..."
               onKeyPress={(e) => e.key === "Enter" && sendMessage()}
             />
-            <button onClick={sendMessage}>Send</button>
+
+            <button onClick={sendMessage}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M3.51 6.03L11.02 9.25L3.5 8.25L3.51 6.03ZM11.01 14.75L3.5 17.97V15.75L11.01 14.75ZM1.51 3L1.5 10L16.5 12L1.5 14L1.51 21L22.5 12L1.51 3Z"
+                  fill="#2044F2"
+                />
+              </svg>
+            </button>
           </div>
           {options.length > 0 && (
             <div className="chat-options">
